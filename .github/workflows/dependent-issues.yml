@@ -7,11 +7,6 @@ on:
       - edited
       - closed
       - reopened
-  issue_comment:
-    types: 
-      - created
-      - edited
-      - deleted
   pull_request_target:
     types:
       - opened
@@ -23,10 +18,13 @@ on:
       # can be removed.
       - synchronize
 
-  # Schedule a daily check. Useful if you reference cross-repository
+  # Schedule a check 3 times during the working day. Useful if you reference cross-repository
   # issues or pull requests. Otherwise, it can be removed.
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 8,12,16 * * *'
+  
+  # Allow manual dispatch if we know a linked issue is resolved
+  workflow_dispatch:
 
 jobs:
   check:
