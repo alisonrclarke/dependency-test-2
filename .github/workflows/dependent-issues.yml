@@ -39,13 +39,13 @@ jobs:
           # (Optional) The token to use to make API calls to GitHub for remote repos.
           GITHUB_READ_TOKEN: ${{ secrets.GITHUB_READ_TOKEN }}
 
-#         with:
+        with:
           # (Optional) The label to use to mark dependent issues
           # label: dependent
 
           # (Optional) Enable checking for dependencies in issues.
           # Enable by setting the value to "on". Default "off"
-          # check_issues: off
+          check_issues: on
 
           # (Optional) Ignore dependabot PRs.
           # Enable by setting the value to "on". Default "off"
