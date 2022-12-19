@@ -21,7 +21,7 @@ on:
   # Schedule a check 3 times during the working day. Useful if you reference cross-repository
   # issues or pull requests. Otherwise, it can be removed.
   schedule:
-    - cron: '0 8,12,16 * * *'
+    - cron: '30 8,12,16 * * *'
   
   # Allow manual dispatch if we know a linked issue is resolved
   workflow_dispatch:
