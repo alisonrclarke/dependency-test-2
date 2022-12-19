@@ -7,6 +7,11 @@ on:
       - edited
       - closed
       - reopened
+  issue_comment:
+    types: 
+      - created
+      - edited
+      - deleted
   pull_request_target:
     types:
       - opened
