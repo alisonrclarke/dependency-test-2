@@ -21,7 +21,7 @@ on:
   # Schedule a check 3 times during the working day. Useful if you reference cross-repository
   # issues or pull requests. Otherwise, it can be removed.
   schedule:
-    - cron: '0 8,12,16 * * *'
+    - cron: '30 8,12,16 * * *'
   
   # Allow manual dispatch if we know a linked issue is resolved
   workflow_dispatch:
@@ -30,12 +30,12 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: z0al/dependent-issues@v1
+      - uses: wellcometrust/dependent-issues@v1.0.0
         env:
           # (Required) The token to use to make API calls to GitHub.
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # (Optional) The token to use to make API calls to GitHub for remote repos.
-          GITHUB_READ_TOKEN: ${{ secrets.GITHUB_READ_TOKEN }}
+          GITHUB_READ_TOKEN: ${{ secrets.GH_PAT }}
 
         with:
           # (Optional) The label to use to mark dependent issues
